@@ -44,10 +44,10 @@ public class Main {
         public int compareTo(Info o) {
             if (this.value == o.value) {
                 if (this.rotate == o.rotate) {
-                    if (this.r == o.r) {
-                        return Integer.compare(this.c, o.c);
+                    if (this.c == o.c) {
+                        return Integer.compare(this.r, o.r);
                     }
-                    return Integer.compare(this.r, o.r);
+                    return Integer.compare(this.c, o.c);
                 }
                 return Integer.compare(this.rotate, o.rotate);
             }
@@ -105,6 +105,7 @@ public class Main {
                 for (Pos part : parts) {
                     cnt += getCnt(new ArrayDeque<>(), new boolean[N][N], part.r, part.c, true);
                 }
+
                 // 빈공간 채우기
                 fill();
             }
